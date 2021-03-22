@@ -10,12 +10,13 @@ int main()
 {
 	srand(time(NULL));
 
-	const int listSize = 50000;
-	int selectionList[listSize];
-	int bubbleList[listSize];
-	int insertionList[listSize];
-	int mergeList[listSize];
-	int parallelList[listSize];
+	const int listSize = 10000000;
+	int chunkSize = 2500000;
+	int* selectionList = new int[listSize];
+	int* bubbleList = new int[listSize];
+	int* insertionList = new int[listSize];
+	int* mergeList = new int[listSize];
+	int* parallelList = new int[listSize];
 
 	int temp;
 
@@ -58,8 +59,6 @@ int main()
 	end = chrono::system_clock::now();
 	elapsed = end - start;
 	cout << "Merge Sort Time: " << elapsed.count() << endl;
-
-	int chunkSize = 5000;
 
 	start = chrono::system_clock::now();
 	sorter.ParallelMergeSort(parallelList, 0, listSize - 1, chunkSize);

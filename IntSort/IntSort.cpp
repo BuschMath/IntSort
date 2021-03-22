@@ -100,7 +100,7 @@ void IntSort::MergeSort(int* list, int first, int last)
 		int rightLast = last;
 		int index = 0;
 
-		int* temp = new int[(last - first) + 1];
+		int* temp = (int*)malloc(sizeof(int) * (last - first + 1));// new int[(last - first) + 1];
 
 		while ((leftFirst <= leftLast) && (rightFirst <= rightLast))
 		{
@@ -165,7 +165,7 @@ void IntSort::ParallelMergeSort(int* list, int first, int last, int chunkSize)
 		int rightLast = last;
 		int index = 0;
 
-		int* temp = new int[(last - first) + 1];
+		int* temp = (int*) malloc((last - first + 1) * sizeof(int));// new int[(last - first) + 1];
 
 		while ((leftFirst <= leftLast) && (rightFirst <= rightLast))
 		{
