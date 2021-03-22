@@ -10,8 +10,8 @@ int main()
 {
 	srand(time(NULL));
 
-	const int listSize = 10000000;
-	int chunkSize = 2500000;
+	const int listSize = 1000000;
+	int chunkSize = 250000;
 	int* selectionList = new int[listSize];
 	int* bubbleList = new int[listSize];
 	int* insertionList = new int[listSize];
